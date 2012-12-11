@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="de.spurtikus.softtek.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="de.spurtikus.softtek.Perspective"
+            id="softtek.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            name="Tek1241/1240 View"
+            allowMultiple="true"
+            icon="icons/view.png"
+            class="de.spurtikus.softtek.View"
+            id="softtek.view">
+      </view>
+      <view
+            name="Navigation"
+            allowMultiple="true"
+            icon="icons/navigation.gif"
+            class="de.spurtikus.softtek.NavigationView"
+            id="softtek.navigationView">
+      </view>
+      <view
+            name="Device"
+            allowMultiple="true"
+            icon="icons/navigation.gif"
+            class="de.spurtikus.softtek.DevConfigView"
+            id="softtek.devConfigView">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="Mail"
+            id="softtek.category">
+      </category>
+      <command
+            name="Open Mailbox"
+            description="Opens a mailbox"
+            categoryId="softtek.category"
+            id="softtek.open">
+      </command>
+      <command
+            name="Open Message Dialog"
+            description="Open a message dialog"
+            categoryId="softtek.category"
+            id="softtek.openMessage">
+      </command>
+      <command
+            name="Save Message Dialog"
+            description="Save a message dialog"
+            categoryId="softtek.category"
+            id="softtek.saveMessage">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="softtek.open"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="CTRL+2">
+      </key>
+      <key
+            commandId="softtek.saveMessage"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="CTRL+3">
+      </key>
+      <key
+            commandId="softtek.openMessage"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="CTRL+O">
+      </key>
+      <key
+            commandId="org.eclipse.ui.file.exit"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="CTRL+X">
+      </key>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="softtek.application"
+            name="SoftTek">
+         <property
+               name="aboutText"
+               value="SoftTek - display and analyze data from Tektronix Logic Analyzers 1241/1240">
+         </property>
+         <property
+               name="windowImages"
+               value="product_lg.gif">
+         </property>
+         <property
+               name="aboutImage"
+               value="product_lg.gif">
+         </property>
+      </product>
+   </extension>
+
+</plugin>

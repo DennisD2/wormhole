@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SoftTek
+Bundle-SymbolicName: softtek; singleton:=true
+Bundle-Version: 1.0.0.0
+Bundle-Activator: softtek.Activator
+Bundle-Vendor: spurtikus.de
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Import-Package: org.eclipse.ui.console
+Bundle-ClassPath: .,
+ META-INF/,
+ testdata/,
+ lib/RXTXcomm.jar
+Export-Package: de.spurtikus.comm.serial,
+ de.spurtikus.softtek,
+ gnu.io

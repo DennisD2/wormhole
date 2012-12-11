@@ -1,0 +1,53 @@
+
+Bugs
+----
+- X calculation of cursor is wrong again (due to some unknown change), needs to be fixed
+
+
+Wish list
+---------
+- Download data (setup, acquisition) to device. Needs change of GPIB-Controller code.
+
+- Scrollable navigation view (better than several sub dialogues)
+
+- Add to cursor info: delta time to trigger pos
+
+- Ability to write data back to the Tek (e.g. new group names etc.)
+
+- Ability to print out sequential data values. e.g. decoding RS232 data, ISP and more.
+
+- Ability to print (parts of the) canvas. E.g. "all" or "between cursor X and Y".   
+
+- Add code to save a part of the view as JPEG/... image
+
+- Enable to display two-timebase acquisitions (using correlation data array -> looks complicated)
+
+
+Done
+----
+
+- Support chained acquisitions
+
+- There is no automatic redraw after having loaded data from tek device
+
+- Support glitch data
+
+- Add code to receive and handle service requests, e.g. user key press on tek (acq mem upload etc.) 
+
+- Ability to load and save memory images.
+
+- Add cursor functionality. 2-4 cursors, dragable and display of delta time between cursors, 
+between cursor and trigger, printout of value (hex, bin, dec etc.) at cursor.
+Issue: how to create a dragable object that does not destroy the original content of the canvas?
+
+- Ability to directly load from Tek device via RS232 and GPIB. Buttons "Load AC mem from Device", 
+"Load Setup mem from Device". rename old "Start" Button to "Load from file".
+
+- prlword is wrong for higher bits. Needs analysis. Example:
+Sequence step 2: Timebase 1, action: wait for: 11001100XXXXXXXX101010XXXXXXXX10XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX ,
+     to occur 1234 times, filter: 5, with Storage: true
+Here, the string "...X101010XXXXXXXXXXX..." should be "...X10101010XXXXXXXX10XXX..."
+
+- Maybe the numbering of group bit ids is wrong (I use Pod bit ids which can be different from group bit id). 
+Needs study of manual and trying it out if this is a real error.
+
